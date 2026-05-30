@@ -1,5 +1,5 @@
-<div class="ourmodal-backdrop">
-    <div class="card">
+<div class="ourmodal-backdrop" (click)="onClose(false)">
+    <div class="card" (click)="$event.stopPropagation()">
          <div class="card-header">
             <ng-content select="h3"></ng-content>
          </div>
@@ -7,8 +7,9 @@
         <ng-content select="p"></ng-content>
         </div>
         <div class="card-footer d-flex justify-content-between">
-            <button class="btn btn-sm btn-outline-primary">Yes</button>
-            <button class="btn btn-sm btn-outline-danger">No</button>
+            <button
+                     (click)="onClose(true)" class="btn btn-sm btn-outline-primary">Yes</button>
+            <button  (click)="onClose(false)"class="btn btn-sm btn-outline-danger">No</button>
 
         </div>
     </div>

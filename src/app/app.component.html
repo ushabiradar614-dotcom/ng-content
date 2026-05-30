@@ -13,9 +13,14 @@
         </app-auth>
       </div> -->
 <div class="col-12">
-  <button class="btn btn-primary mt-4">Remove</button>
+  <button
+  (click)="onRemove()"
+   class="btn btn-primary mt-4">Remove</button>
 </div>
-<app-get-confirm>
+<app-get-confirm
+
+(emitApiFlag)="getConfirmation($event)"
+*ngIf="showModel">
   <h3>Are You Shur To Remove The Post With Id 123?</h3>
   <p>Yoy can not revert back</p>
 </app-get-confirm>

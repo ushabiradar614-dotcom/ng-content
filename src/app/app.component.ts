@@ -7,6 +7,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-content';
-  constructor(){}
-  
+  showModel :boolean=false
+  constructor(){
+
+  }
+getConfirmation(getConfirmFlag:boolean){
+  if(getConfirmFlag){
+    alert(`Remove It`)
+  }else{
+    alert(`Dont Remove It`)
+  }
+}
+  getHideFlag(flag: boolean){
+    this.showModel = false
+  }
+
+
+  onRemove(){
+    this.showModel=true
+  }
 }
